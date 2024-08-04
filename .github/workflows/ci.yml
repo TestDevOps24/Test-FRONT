@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Check working directory
+        run: ls -la holagoomba
+
       - name: Install dependencies
         working-directory: holagoomba
         run: npm install
