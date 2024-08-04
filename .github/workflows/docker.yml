@@ -2,7 +2,7 @@ name: Build and Publish Docker Image
 
 on:
   pull_request:
-    types: [closed]  # Se activa cuando el Pull Request se cierra
+    types: [closed]  
     branches:
       - dev
       - qa
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true  # Asegúrate de que se haya fusionado el PR
+    if: github.event.pull_request.merged == true  
     runs-on: ubuntu-latest
 
     steps:
