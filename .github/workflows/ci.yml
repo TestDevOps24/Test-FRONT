@@ -1,4 +1,4 @@
-name: CI/CD 
+name: CI/CD
 
 on:
   pull_request:
@@ -24,15 +24,10 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: Change directory to holagoomba
-        run: cd holagoomba
-
       - name: Install dependencies
-        run: |
-          cd holagoomba
-          npm install
+        working-directory: holagoomba
+        run: npm install
 
       - name: Run tests
-        run: |
-          cd holagoomba
-          npm run test
+        working-directory: holagoomba
+        run: npm run test
