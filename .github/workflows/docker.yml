@@ -24,10 +24,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build Docker image
-        run: |
-          docker build -t ghcr.io/${{ github.repository }}/my-app:latest ./holagoomba
+      - name: Build the Docker image
+        run: docker build -t ghcr.io/testdevops24/test-front/my-app:latest ./holagoomba
 
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ github.repository }}/my-app:latest
+      - name: Push the Docker image
+        run: docker push ghcr.io/testdevops24/test-front/my-app:latest
